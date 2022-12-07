@@ -5,6 +5,9 @@
 | Erick Eloi Pimenta Pimentel |  201811140038 | 1-4 |
 | THIAGO AMORIM NUNES |    202111140012   |   5-7 |
 
+Data de entrega e data da Prova: 13/12
+Seria bom entregar essa tarefa até dia 12 (Segunda) ou o quanto antes!
+
 PROGRESSO:
 - [x] QUESTÃO 1
   - [ ] UML
