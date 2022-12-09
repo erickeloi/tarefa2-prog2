@@ -1,102 +1,139 @@
-# 2- Usando o exercício 1 como base, escreva as classes 
+# 2- Usando o exercício 1 como base, escreva as classes:
 # Quadrado, que herda da classe Retangulo 
 # mas somente precisa inicializar um dos lados, 
 
-# e as classes:
+# E as classes:
 # TrianguloEquilatero, TrianguloIsosceles e TrianguloEscaleno que precisam inicializar
 # somente um, dois ou três lados do triângulo. 
-# 
+
 # Para cada uma destas classes, quais métodos devem ser sobrepostos 
 # e quais podem ser aproveitados, 
-# apresentar Diagrama UML e Fazer instâncias das classes herdeiras na classe principal, 
+
+# Apresentar Diagrama UML e Fazer instâncias das classes herdeiras na classe principal, 
 # apresentando como saída áreas e perímetros dos objetos geométricos.
 
 import math
 class ObjetoGeometrico():
-    def __init__(self, area=0, perimetro=0):
-        self.area = area
+    def __init__(self, x: int, y: int):
+        self.x: int = x
+        self.y: int = y
+
+    # Definindo Getters
+    def getX(self):
+        return self.x
+    def getY(self):
+        return self.y
+    def getArea(self):
+        return self.area
+    def getPerimetro(self):
+        return self.perimetro
+
+    # Definindo Setters
+    def setX(self, x):
+        self.x = x
+    def setY(self, y):
+        self.y = y
+    def setPerimetro(self, perimetro):
         self.perimetro = perimetro
-    def calcula_area(self):
-        print("Não é possível calcular a área sem previamente informar mais informações sobre o objeto.")
+    def setArea(self, area):
+        self.area = area
+
     def calcula_perimetro(self):
-        print("Não é possível calcular o perimetro sem previamente informar mais informações sobre o objeto.")
-    def mostrar_dados(self):
-        print(f"Área: {self.area}")
-        print(f"Perimetro: {self.perimetro}")
+        return None
+    def calcula_area(self):
+        return None
+
+    def retornar_dados(self):
+        dados = f"""Coordenada X: {self.x}
+Coordenada Y: {self.y}    
+Área: {self.area}
+Perimetro: {self.perimetro}"""
+        return dados
 
 class Circulo(ObjetoGeometrico):
-    def __init__(self, centro=0, raio=0):
-        
-        self.centro = centro
+    def __init__(self, x: int, y: int, raio: int):
         self.raio = raio
+        super().__init__(x, y)
+
+    def getRaio(self):
+        return self.raio
+    
+    def setRaio(self, raio: int):
+        self.raio = raio
+
     def calcula_area(self):
-        self.area = math.pi*(self.raio*self.raio)
+        return math.pi*(self.raio*self.raio)
+
     def calcula_perimetro(self):
-        self.perimetro = 2*math.pi*self.raio 
-    def mostrar_dados(self):
-        print(f"Raio: {self.raio}")
-        print(f"Coordenada do centro: {self.centro}")
-        print(f"Área: {self.area}")
-        print(f"Perimetro: {self.perimetro}")
+        return 2*math.pi*self.raio 
+
+    def retornar_dados(self):
+        return f"Raio: {self.raio}\n"+ super().retornar_dados()
 
 class Retangulo(ObjetoGeometrico):
-    def __init__(self, lado1=0, lado2=0):
-        self.lado1 = lado1
-        self.lado2 = lado2
+    def __init__(self, x: int, y: int):
+        self.x: int = x
+        self.y: int = y
+        
     def calcula_perimetro(self):
-        self.perimetro = 2*(self.lado1) + 2*(self.lado2)
+        return 2*(self.x) + 2*(self.y)
+
     def calcula_area(self):
-        self.area = self.lado1 * self.lado2
+        return self.x * self.y
 
 class Triangulo(ObjetoGeometrico):
-    def __init__(self, lado1=0, lado2=0, lado3=0):
-        super().__init__()
-        self.lado1 = lado1
-        self.lado2 = lado2
-        self.lado3 = lado3
-    def calcula_area(self):
-        a = self.lado1
-        b = self.lado2
-        c = self.lado3
-        s = self.perimetro/2
-        self.area = math.sqrt((s*(s-a)*(s-b)*(s-c))) 
+    def __init__(self, x: int, y: int, z: int):
+        self.x = x
+        self.y = y
+        self.z = z
+
     def calcula_perimetro(self):
-        self.perimetro = self.lado1+self.lado2+self.lado3
-    def mostrar_dados(self):
-        print(f"Lado 1: {self.lado1}")
-        print(f"Lado 2: {self.lado2}")
-        print(f"Lado 3: {self.lado3}")
-        print(f"Área: {self.area}")
-        print(f"Perimetro: {self.perimetro}")
+        return self.x + self.y + self.z
 
-# Quadrado, que herda da classe Retangulo 
-# mas somente precisa inicializar um dos lados, 
+    def calcula_area(self):
+        a = self.x
+        b = self.y
+        c = self.z
+        s = (self.calcula_perimetro()/2)
+        return math.sqrt((s*(s-a)*(s-b)*(s-c))) 
+
+    def retornar_dados(self):
+        return f"Coordenada Z: {self.z}\n" + super().retornar_dados()
+
+
+# Questão 2:
+
+# Classe Quadrado (Só é necessário colocar um dos lados)
 class Quadrado(Retangulo):
-    def __init__(self, lado):
-        self.lado = lado
-        self.perimetro = 4*lado
-        self.area = lado**2
+    def __init__(self, x: int):
+        super().__init__(x, x)
 
-q = Quadrado(2)
-q.mostrar_dados()
-
-# e as classes:
-# TrianguloEquilatero, TrianguloIsosceles e TrianguloEscaleno que precisam inicializar
-# somente um, dois ou três lados do triângulo. 
+# Classe Triangulo Equilatero (Só é necessário colocar um dos lados)
 class TrianguloEquilatero(Triangulo):
-    def __init__(self, lado):
-        super().__init__(lado, lado, lado)
+    def __init__(self, x: int):
+        super().__init__(x, x, x)
 
+# Classe Triangulo Isosceles (Só é necessário colocar dois dos lados)
 class TrianguloIsosceles(Triangulo):
-    def __init__(self, lado1, lado2):
-        self.lado1 = lado1
-        self.lado2 = lado2
-        self.lado3 = lado2
+    def __init__(self, lado_maior: int, lado_igual: int):
+        super().__init__(lado_maior, lado_igual, lado_igual)
+
+# Classe Triangulo Escaleno (É necessário colocar os três lados)   
 class TrianguloEscaleno(Triangulo):
-    pass
+    def __init__(self, x: int, y: int, z: int):
+        super().__init__(x, y, z)
 
-te = TrianguloEquilatero(2)
+if __name__ == "__main__":
+    print("Quadrado de lado 2: \n")
+    q = Quadrado(2)
+    q.setArea(q.calcula_area())
+    q.setPerimetro(q.calcula_perimetro())
+    print(q.retornar_dados())
 
-te.calcula_perimetro()
-te.calcula_area()
-print(te.area)
+    print()
+
+    print("Triangulo Equilatero de lado 2: \n")
+    te = TrianguloEquilatero(2)
+    te.setArea(te.calcula_area())
+    te.setPerimetro(te.calcula_perimetro())
+    print(te.retornar_dados())
