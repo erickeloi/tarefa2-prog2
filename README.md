@@ -11,7 +11,7 @@ Seria bom entregar essa tarefa até dia 12 (Segunda) ou o quanto antes!
 PROGRESSO:
 - [x] QUESTÃO 1
   - [ ] UML
-- [ ] QUESTÃO 2
+- [x] QUESTÃO 2
   - [ ] UML
 - [x] QUESTÃO 3
   - [ ] UML
