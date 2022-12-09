@@ -3,7 +3,7 @@
 | ALUNO  |      MATRICULA     |  QUESTÕES |
 |----------|:-------------:|:------:|
 | Erick Eloi Pimenta Pimentel |  202111140012 | 1-4 |
-| THIAGO AMORIM NUNES |    201811140038   |   5-7 |
+| Thiago Amorim Nunes |    201811140038   |   5-7 |
 
 Data de entrega e data da Prova: 13/12
 Seria bom entregar essa tarefa até dia 12 (Segunda) ou o quanto antes!
