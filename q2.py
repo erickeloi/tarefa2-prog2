@@ -17,7 +17,8 @@ class ObjetoGeometrico():
     def __init__(self, x: int, y: int):
         self.x: int = x
         self.y: int = y
-
+        self.area: float
+        self.perimetro: int
     # Definindo Getters
     def getX(self):
         return self.x
@@ -83,8 +84,7 @@ class Retangulo(ObjetoGeometrico):
 
 class Triangulo(ObjetoGeometrico):
     def __init__(self, x: int, y: int, z: int):
-        self.x = x
-        self.y = y
+        super().__init__(x, y)
         self.z = z
 
     def calcula_perimetro(self):
@@ -116,7 +116,7 @@ class TrianguloEquilatero(Triangulo):
 # Classe Triangulo Isosceles (Só é necessário colocar dois dos lados)
 class TrianguloIsosceles(Triangulo):
     def __init__(self, lado_maior: int, lado_igual: int):
-        super().__init__(lado_maior, lado_igual, lado_igual)
+        super().__init__(lado_igual, lado_igual, lado_maior)
 
 # Classe Triangulo Escaleno (É necessário colocar os três lados)   
 class TrianguloEscaleno(Triangulo):

@@ -10,7 +10,9 @@ class ObjetoGeometrico():
     def __init__(self, x: int, y: int):
         self.x: int = x
         self.y: int = y
-
+        self.area: float
+        self.perimetro: int
+        
     # Definindo Getters
     def getX(self):
         return self.x
@@ -72,8 +74,7 @@ class Circulo(ObjetoGeometrico):
 # Retangulo (contendo dois valores para os lados)
 class Retangulo(ObjetoGeometrico):
     def __init__(self, x: int, y: int):
-        self.x: int = x
-        self.y: int = y
+        super().__init__(x, y)
         
     def calcula_perimetro(self):
         return 2*(self.x) + 2*(self.y)
@@ -84,8 +85,7 @@ class Retangulo(ObjetoGeometrico):
 # Triangulo (contendo três valores para os lados), 
 class Triangulo(ObjetoGeometrico):
     def __init__(self, x: int, y: int, z: int):
-        self.x = x
-        self.y = y
+        super().__init__(x, y)
         self.z = z
 
     def calcula_perimetro(self):

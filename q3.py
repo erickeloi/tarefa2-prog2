@@ -1,3 +1,4 @@
+#PLANTUML OU DRAWIO
 # 3. Crie uma hierarquia de classes de domínio para uma loja que venda livros, CDs e
 # DVDs. Sobrescreva o método toString() para que imprima:
 # • Para livros: nome, preço e autor;

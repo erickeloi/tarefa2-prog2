@@ -1,0 +1,44 @@
+@startuml Loja
+    class Produto {
+        +String codigo_barras
+        +String nome
+        +Float preco
+
+        +Void adicionaDados()
+        +String toString()
+    }
+
+    class Livro{
+        +String autor
+
+        +Void adicionaDados()
+        +String toString()
+        
+    }
+    class CD {
+        +Integer n_faixas
+
+        +Void adicionaDados()
+        +String toString()
+        
+    }
+    class DVD{
+        +Integer duracao
+
+        +Void adicionaDados()
+        +String toString()
+    }   
+
+    class Loja{
+        +List banco_de_dados
+
+        +Void MostrarProdutosCadastrados()
+        +Void CadastrarProduto()
+        +Void main()
+    }
+
+    Produto <|-- Livro
+    Produto <|-- CD
+    Produto <|-- DVD
+
+@enduml

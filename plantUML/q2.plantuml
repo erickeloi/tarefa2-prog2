@@ -1,0 +1,95 @@
+@startuml Classes
+
+class ObjetoGeometrico {
+  +Float area
+  +Integer perimetro
+  +Integer x
+  +Integer y 
+  .. Getters ..
+  +Integer getArea()
+  +Integer getPerimetro()
+  +Integer getX()
+  +Integer getY()
+  .. Setters ..
+  +Void setArea()
+  +Void setPerimetro()
+  +Void setX()
+  +Void setY()
+  ..
+  +Void calcula_area()
+  +Void calcula_perimetro()
+  +String retornar_dados()
+}
+
+class Circulo{
+  +Integer x
+  +Integer y
+  +Integer raio
+  .. Getters ..
+  +Integer getRaio()
+  .. Setters ..
+  +Void setRaio()
+  ..
+  +Integer calcula_area()
+  +Integer calcula_perimetro()
+  +String retornar_dados()
+}
+
+class Retangulo {
+  +Integer x
+  +Integer y
+
+  +Integer calcula_area()
+  +Integer calcula_perimetro()
+}
+class Triangulo {
+  +Integer x
+  +Integer y
+  +Integer z
+
+  +Integer calcula_area()
+  +Integer calcula_perimetro()
+  +String retornar_dados()
+}
+
+class Quadrado {
+  +Integer x
+}
+
+class TrianguloEquilatero{
+  +Integer x
+}
+
+class TrianguloIsosceles{
+  +Integer x
+  +Integer y
+}
+
+class TrianguloEscaleno{
+  +Integer x
+  +Integer y
+  +Integer z
+}
+
+ObjetoGeometrico <|-- Circulo
+ObjetoGeometrico <|-- Retangulo
+ObjetoGeometrico <|-- Triangulo
+
+Retangulo <|-- Quadrado
+
+TrianguloEquilatero <|-- Triangulo
+TrianguloIsosceles <|-- Triangulo
+TrianguloEscaleno <|-- Triangulo
+
+object q{
+x = 2
+}
+
+object te{
+x = 2
+}
+
+Quadrado <-- q
+TrianguloEquilatero <-- te
+
+@enduml
