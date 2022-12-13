@@ -8,15 +8,18 @@
 Data de entrega e data da Prova: 13/12
 Seria bom entregar essa tarefa até dia 12 (Segunda) ou o quanto antes!
 
+( Se você tiver o código fonte do projeto em python e quiser automatizar um diagrama UML,
+podes usar o pyreverse, que vem o a bliblioteca pylint, seguindo [esse tutorial](https://www.bhavaniravi.com/python/generate-uml-diagrams-from-python-code) )
+
 PROGRESSO:
 - [x] QUESTÃO 1
-  - [ ] UML
+  - [x] UML
 - [x] QUESTÃO 2
-  - [ ] UML
+  - [x] UML
 - [x] QUESTÃO 3
-  - [ ] UML
+  - [x] UML
 - [x] QUESTÃO 4
-  - [ ] UML
+  - [x] UML
 - [ ] QUESTÃO 5
   - [ ] UML
 - [ ] QUESTÃO 6
