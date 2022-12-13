@@ -21,8 +21,8 @@ PROGRESSO:
 - [x] QUESTÃO 4
   - [x] UML
 - [ ] QUESTÃO 5
-  - [ ] UML
 - [ ] QUESTÃO 6
+-   [ ] UML
 - [ ] QUESTÃO 7
 
 - [ ] Criar Documento Word Ou Zipar os códigos do repositório e enviar pro professor
